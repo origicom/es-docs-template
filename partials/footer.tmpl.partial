@@ -2,8 +2,16 @@
 
 <footer>
   <div class="grad-bottom"></div>
-  <div class="footer">
-    <div class="container">
+  <div class="footer site-footer">
+    <div class="container inner-container">
+                <p class="footer__copyright">&copy; 2017 Event Store LLP</p>
+                <ul class="footer__menu">
+                    <li class="footer__menu__item"><a href="https://eventstore.org/">Home</a></li>
+                    <li class="footer__menu__item"><a href="https://eventstore.org/about/">About Us</a></li>
+                    <li class="footer__menu__item"><a href="https://eventstore.zendesk.com">Support Sign In</a></li>
+                    <li class="footer__menu__item"><a href="https://eventstore.org/terms/">Terms</a></li>
+                    <li class="footer__menu__item"><a href="https://eventstore.org/contact/">Contact</a></li>
+                </ul>
       <span class="pull-right">
         <a href="#top">Back to top</a>
       </span>
