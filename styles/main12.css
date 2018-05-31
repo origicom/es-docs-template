@@ -192,6 +192,7 @@ td, th {
     /*margin: 0 auto;*/
     /*padding: 0 1.5rem*/
 /*}*/
+
 nav.navbar {
     background-color: #4CAF50;
     border-color: #4CAF50;
@@ -214,6 +215,14 @@ nav.navbar {
 
 .article {
     margin-top:30px;
+}
+
+.sidefilter {
+    top: 65px;
+}
+
+.sidetoc {
+    top: 130px;
 }
 
 .page-header {
