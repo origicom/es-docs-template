@@ -221,6 +221,12 @@ nav.navbar {
     top: 65px;
 }
 
+.sinceversion b {
+    padding: 6px 10px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
 .sidetoc {
     top: 130px;
 }
