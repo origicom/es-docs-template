@@ -59,6 +59,8 @@ $(function () {
         $('.NOTE, .TIP').addClass('alert alert-info');
         $('.WARNING').addClass('alert alert-warning');
         $('.IMPORTANT, .CAUTION').addClass('alert alert-danger');
+        $('.NEXT').addClass('alert alert-next');
+        $('.VERSION').addClass('alert alert-version');
     }
 
     // Enable anchors for headings.
@@ -168,8 +170,8 @@ $(function () {
             console.log("using local search");
             var lunrIndex = lunr(function () {
                 this.ref('href');
-                this.field('title', {boost: 50});
-                this.field('keywords', {boost: 20});
+                this.field('title', { boost: 50 });
+                this.field('keywords', { boost: 20 });
             });
             lunr.tokenizer.seperator = /[\s\-\.]+/;
             var searchData = {};
@@ -197,7 +199,7 @@ $(function () {
                 var results = [];
                 hits.forEach(function (hit) {
                     var item = searchData[hit.ref];
-                    results.push({'href': item.href, 'title': item.title, 'keywords': item.keywords});
+                    results.push({ 'href': item.href, 'title': item.title, 'keywords': item.keywords });
                 });
                 handleSearchResults(results);
             });
@@ -221,10 +223,10 @@ $(function () {
 
             indexReady.promise().done(function () {
                 $("body").bind("queryReady", function () {
-                    worker.postMessage({q: query});
+                    worker.postMessage({ q: query });
                 });
                 if (query && (query.length >= 3)) {
-                    worker.postMessage({q: query});
+                    worker.postMessage({ q: query });
                 }
             });
         }
@@ -577,7 +579,7 @@ $(function () {
                 };
 
                 if (!stack.length) {
-                    stack.push({type: e.tagName, siblings: [item]});
+                    stack.push({ type: e.tagName, siblings: [item] });
                     return;
                 }
 
@@ -588,7 +590,7 @@ $(function () {
                     // we are looking at a child of the last element of frame.siblings.
                     // push a frame onto the stack. After we've finished building this item's children,
                     // we'll attach it as a child of the last element
-                    stack.push({type: e.tagName, siblings: [item]});
+                    stack.push({ type: e.tagName, siblings: [item] });
                 } else {  // e.tagName[1] < frame.type[1]
                     // we are looking at a sibling of an ancestor of the current item.
                     // pop frames from the stack, building items as we go, until we reach the correct level at which to attach this item.
@@ -598,7 +600,7 @@ $(function () {
                     if (e.tagName === stack[stack.length - 1].type) {
                         stack[stack.length - 1].siblings.push(item);
                     } else {
-                        stack.push({type: e.tagName, siblings: [item]});
+                        stack.push({ type: e.tagName, siblings: [item] });
                     }
                 }
             });
@@ -806,7 +808,7 @@ $(function () {
         function initTabs(container) {
             var queryStringTabs = readTabsQueryStringParam();
             var elements = container.querySelectorAll('.tabGroup');
-            var state = {groups: [], selectedTabs: []};
+            var state = { groups: [], selectedTabs: [] };
             for (var i = 0; i < elements.length; i++) {
                 var group = initTabGroup(elements.item(i));
                 if (!group.independent) {
@@ -892,7 +894,7 @@ $(function () {
             if (group === undefined) {
                 return null;
             }
-            return {tabIds: tabIds, group: group, anchor: anchor};
+            return { tabIds: tabIds, group: group, anchor: anchor };
         }
 
         function handleClick(event, state) {
@@ -941,7 +943,7 @@ $(function () {
                 if (a === null) {
                     return;
                 }
-                a.dispatchEvent(new CustomEvent('click', {bubbles: true}));
+                a.dispatchEvent(new CustomEvent('click', { bubbles: true }));
             }
         }
 
