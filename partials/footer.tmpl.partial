@@ -4,7 +4,7 @@
   <div class="grad-bottom"></div>
   <div class="footer site-footer">
     <div class="container inner-container">
-                <p class="footer__copyright">&copy; 2018 Event Store LLP</p>
+                <p class="footer__copyright">{{{_appFooter}}}</p>
                 <ul class="footer__menu">
                     <li class="footer__menu__item"><a href="https://eventstore.org/">Home</a></li>
                     <li class="footer__menu__item"><a href="https://eventstore.org/about/">About Us</a></li>
@@ -15,8 +15,6 @@
       <span class="pull-right">
         <a href="#top">Back to top</a>
       </span>
-      {{{_appFooter}}}
-      {{^_appFooter}}{{/_appFooter}}
     </div>
   </div>
 </footer>

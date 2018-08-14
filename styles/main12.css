@@ -1,5 +1,3 @@
-.alert .alert-next {}
-
 .NEXT {
     border-color: #0070aa;
 }
@@ -25,8 +23,6 @@
     content: "\e086";
     margin-right: .2em
 }
-
-.alert .alert-version {}
 
 .VERSION {
     border-color: #0070aa;

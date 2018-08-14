@@ -56,11 +56,11 @@ $(function () {
 
     // Styling for alerts.
     function renderAlerts() {
-        $('.NOTE, .TIP').addClass('alert alert-info');
+        $('.NOTE, .TIP, .VERSION').addClass('alert alert-info');
+        // $('.VERSION').addClass('alert alert-version');
         $('.WARNING').addClass('alert alert-warning');
         $('.IMPORTANT, .CAUTION').addClass('alert alert-danger');
         $('.NEXT').addClass('alert alert-next');
-        $('.VERSION').addClass('alert alert-version');
     }
 
     // Enable anchors for headings.
