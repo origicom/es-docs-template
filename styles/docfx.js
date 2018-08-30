@@ -170,7 +170,7 @@ $(function () {
             console.log("using local search");
             var lunrIndex = lunr(function () {
                 this.ref('href');
-                this.field('title', { boost: 50 });
+                this.field('title', { boost: 80 });
                 this.field('keywords', { boost: 20 });
             });
             lunr.tokenizer.seperator = /[\s\-\.]+/;
