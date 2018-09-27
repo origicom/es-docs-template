@@ -56,8 +56,7 @@ $(function () {
 
     // Styling for alerts.
     function renderAlerts() {
-        $('.NOTE, .TIP, .VERSION').addClass('alert alert-info');
-        // $('.VERSION').addClass('alert alert-version');
+        $('.NOTE, .TIP').addClass('alert alert-info');
         $('.WARNING').addClass('alert alert-warning');
         $('.IMPORTANT, .CAUTION').addClass('alert alert-danger');
         $('.NEXT').addClass('alert alert-next');
