@@ -2,8 +2,6 @@
     border-color: #0070aa;
 }
 
-/* TODO: Get this to work with an icon */
-
 .NEXT h5 {
     color: #0070aa;
     visibility: hidden;
@@ -210,16 +208,6 @@ td, th {
     vertical-align: top
 }
 
-/*.container {*/
-
-/*width: 60rem;*/
-
-/*margin: 0 auto;*/
-
-/*padding: 0 1.5rem*/
-
-/*}*/
-
 nav.navbar {
     background-color: #4CAF50;
     border-color: #4CAF50;
@@ -228,8 +216,6 @@ nav.navbar {
 .navbar-inverse .navbar-nav>li>a, .navbar-inverse .navbar-text {
     color: white;
 }
-
-/* TODO: Delete instead? */
 
 .navbar-nav li ul.level2 {
     display: none;
@@ -1070,14 +1056,6 @@ nav.navbar {
 
 .sidenav, .fixed_header, .toc {
     background-color: #f1f1f1;
-}
-
-/* TODO: Fix this, docfx default CSS is setting it */
-
-@media only screen and (max-width: 768px) {
-    .screen .article {
-        margin-top: 0px !important;
-    }
 }
 
 @media (min-width: 720px) {

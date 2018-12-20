@@ -2,7 +2,6 @@
 
 <div class="hidden-sm col-md-2" role="complementary">
   <div class="sideaffix">
-  <!-- TODO: Refactor into partial -->
   <div class="sinceversion">
   {{#sinceVersion}}
   <b>Since version:</b> {{{sinceVersion}}}
