@@ -60,7 +60,6 @@ $(function () {
         $('.WARNING').addClass('alert alert-warning');
         $('.IMPORTANT, .CAUTION').addClass('alert alert-danger');
         $('.NEXT').addClass('alert alert-next');
-        $('.VERSION').addClass('alert alert-version');
     }
 
     // Enable anchors for headings.
@@ -344,12 +343,15 @@ $(function () {
     // Update href in navbar
     function renderNavbar() {
         var navbar = $('#navbar ul')[0];
-        if (typeof (navbar) === 'undefined') {
-            loadNavbar();
-        } else {
-            $('#navbar ul a.active').parents('li').addClass(active);
-            renderBreadcrumb();
-        }
+        loadNavbar();
+
+        // console.log(navbar);
+        // if (typeof (navbar) === 'undefined') {
+        //   loadNavbar();
+        // } else {
+        //   $('#navbar ul a.active').parents('li').addClass(active);
+        //   renderBreadcrumb();
+        // }
 
         function loadNavbar() {
             var navbarPath = $("meta[property='docfx\\:navrel']").attr("content");
@@ -360,7 +362,7 @@ $(function () {
             var tocPath = $("meta[property='docfx\\:tocrel']").attr("content") || '';
             if (tocPath) tocPath = tocPath.replace(/\\/g, '/');
             $.get(navbarPath, function (data) {
-                $(data).find("#toc>ul").appendTo("#navbar");
+                // $(data).find("#toc>ul").appendTo("#navbar");
                 if ($('#search-results').length !== 0) {
                     $('#search').show();
                     $('body').trigger("searchEvent");
@@ -379,6 +381,7 @@ $(function () {
                         href = navrel + href;
                         $(e).attr("href", href);
 
+                        // TODO: currently only support one level navbar
                         var isActive = false;
                         var originalHref = e.name;
                         if (originalHref) {
@@ -388,10 +391,7 @@ $(function () {
                             }
                         } else {
                             if (util.getAbsolutePath(href) === currentAbsPath) {
-                                var dropdown = $(e).attr('data-toggle') == "dropdown"
-                                if (!dropdown) {
-                                    isActive = true;
-                                }
+                                isActive = true;
                             }
                         }
                         if (isActive) {
@@ -399,7 +399,7 @@ $(function () {
                         }
                     }
                 });
-                renderNavbar();
+                // renderNavbar();
             });
         }
     }
@@ -455,7 +455,8 @@ $(function () {
                     for (var i = 0; i < parentNodes.length; i++) {
                         var parentText = $(parentNodes[i]).children('a').attr('title');
                         if (parentText) text = parentText + '.' + text;
-                    };
+                    }
+                    ;
                     if (filterNavItem(text, val)) {
                         parent.addClass(show);
                         parent.removeClass(hide);
@@ -559,7 +560,9 @@ $(function () {
 
         function getHierarchy() {
             // supported headers are h1, h2, h3, and h4
-            var $headers = $($.map(['h1', 'h2', 'h3', 'h4'], function (h) { return ".article article " + h; }).join(", "));
+            var $headers = $($.map(['h1', 'h2', 'h3', 'h4'], function (h) {
+                return ".article article " + h;
+            }).join(", "));
 
             // a stack of hierarchy items that are currently being built
             var stack = [];
@@ -612,6 +615,7 @@ $(function () {
                     parent.items.push(child);
                 });
             }
+
             if (stack.length > 0) {
 
                 var topLevel = stack.pop().siblings;
@@ -739,18 +743,25 @@ $(function () {
                 this.a = a;
                 this.section = section;
             }
+
             Object.defineProperty(Tab.prototype, "tabIds", {
-                get: function () { return this.a.getAttribute('data-tab').split(' '); },
+                get: function () {
+                    return this.a.getAttribute('data-tab').split(' ');
+                },
                 enumerable: true,
                 configurable: true
             });
             Object.defineProperty(Tab.prototype, "condition", {
-                get: function () { return this.a.getAttribute('data-condition'); },
+                get: function () {
+                    return this.a.getAttribute('data-condition');
+                },
                 enumerable: true,
                 configurable: true
             });
             Object.defineProperty(Tab.prototype, "visible", {
-                get: function () { return !this.li.hasAttribute('hidden'); },
+                get: function () {
+                    return !this.li.hasAttribute('hidden');
+                },
                 set: function (value) {
                     if (value) {
                         this.li.removeAttribute('hidden');
@@ -765,7 +776,9 @@ $(function () {
                 configurable: true
             });
             Object.defineProperty(Tab.prototype, "selected", {
-                get: function () { return !this.section.hasAttribute('hidden'); },
+                get: function () {
+                    return !this.section.hasAttribute('hidden');
+                },
                 set: function (value) {
                     if (value) {
                         this.a.setAttribute('aria-selected', 'true');
@@ -802,7 +815,9 @@ $(function () {
                     state.groups.push(group);
                 }
             }
-            container.addEventListener('click', function (event) { return handleClick(event, state); });
+            container.addEventListener('click', function (event) {
+                return handleClick(event, state);
+            });
             if (state.groups.length === 0) {
                 return state;
             }
@@ -888,7 +903,9 @@ $(function () {
             }
             event.preventDefault();
             info.anchor.href = 'javascript:';
-            setTimeout(function () { return info.anchor.href = '#' + info.anchor.getAttribute('aria-controls'); });
+            setTimeout(function () {
+                return info.anchor.href = '#' + info.anchor.getAttribute('aria-controls');
+            });
             var tabIds = info.tabIds, group = info.group;
             var originalTop = info.anchor.getBoundingClientRect().top;
             if (group.independent) {
@@ -901,7 +918,9 @@ $(function () {
                 if (arraysIntersect(state.selectedTabs, tabIds)) {
                     return;
                 }
-                var previousTabId = group.tabs.filter(function (t) { return t.selected; })[0].tabIds[0];
+                var previousTabId = group.tabs.filter(function (t) {
+                    return t.selected;
+                })[0].tabIds[0];
                 state.selectedTabs.splice(state.selectedTabs.indexOf(previousTabId), 1, tabIds[0]);
                 for (var _b = 0, _c = state.groups; _b < _c.length; _b++) {
                     var group_1 = _c[_b];
@@ -960,7 +979,9 @@ $(function () {
             var match;
             var pl = /\+/g;
             var search = /([^&=]+)=?([^&]*)/g;
-            var decode = function (s) { return decodeURIComponent(s.replace(pl, ' ')); };
+            var decode = function (s) {
+                return decodeURIComponent(s.replace(pl, ' '));
+            };
             if (queryString === undefined) {
                 queryString = '';
             }
