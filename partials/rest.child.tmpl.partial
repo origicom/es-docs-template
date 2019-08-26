@@ -29,7 +29,16 @@
 {{#parameters}}
     <tr>
       <td><span class="parametername">{{#required}}*{{/required}}{{name}}</span></td>
-      <td>{{type}}</td>
+      <td>
+      {{#type}}
+      {{type}}
+      {{/type}}
+      {{#schema}}
+      {{type}}
+      {{#properties}}
+      {{key}}
+      {{/properties}}
+      {{/schema}}</td>
       <td>{{default}}</td>
       <td>{{{description}}}</td>
     </tr>
