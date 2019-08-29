@@ -35,14 +35,26 @@
       {{/type}}
       {{#schema}}
       {{type}}
+            <table class="table table-bordered table-striped table-condensed">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Notes</th>
+    </tr>
+  </thead>
+  <tbody>
       {{#properties}}
-      {{key}}
+      <tr><td>{{key}}</td><td>{{value.type}}</td><td>{{{value.description}}}</td></tr>
+
       {{/properties}}
       {{/schema}}</td>
       <td>{{default}}</td>
       <td>{{{description}}}</td>
     </tr>
   {{/parameters}}
+    </tbody>
+</table>
   {{#parameters.0}}
   </tbody>
 </table>
