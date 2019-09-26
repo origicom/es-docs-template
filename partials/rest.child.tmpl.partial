@@ -31,23 +31,22 @@
       <td><span class="parametername">{{#required}}*{{/required}}{{name}}</span></td>
       <td>
       {{#type}}
-      {{type}}
+        {{type}}
       {{/type}}
       {{#schema}}
-      {{type}}
-            <table class="table table-bordered table-striped table-condensed">
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Notes</th>
-    </tr>
-  </thead>
-  <tbody>
-      {{#properties}}
-      <tr><td>{{key}}</td><td>{{value.type}}</td><td>{{{value.description}}}</td></tr>
-
-      {{/properties}}
+        {{type}}
+        <table class="table table-bordered table-striped table-condensed">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Type</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{#properties}}
+              <tr><td>{{key}}</td><td>{{value.type}}</td><td>{{{value.description}}}</td></tr>
+            {{/properties}}</tbody></table>
       {{/schema}}</td>
       <td>{{default}}</td>
       <td>{{{description}}}</td>
@@ -76,7 +75,43 @@
 {{#responses}}
     <tr>
       <td><span class="status">{{statusCode}}</span></td>
-      <td>{{{description}}}</td>
+      <td>{{{description}}}
+
+      {{#type}}
+        {{type}}
+      {{/type}}
+      {{#schema}}
+        {{type}}
+        <table class="table table-bordered table-striped table-condensed">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Type</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{#properties}}
+              <tr><td>{{key}}</td><td>{{value.type}}
+                    {{#value.items}}
+        <table class="table table-bordered table-striped table-condensed">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Type</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{#properties}}
+              <tr><td>{{key}}</td><td>{{value.type}}</td><td>{{{value.description}}}</td></tr>
+            {{/properties}}
+            </tbody></table>
+      {{/value.items}}
+              </td><td>{{{value.description}}}</td></tr>
+            {{/properties}}
+            </tbody></table>
+      {{/schema}}</td>
       <td class="sample-response">
         {{#examples}}
         <div class="mime-type">
