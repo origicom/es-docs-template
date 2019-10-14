@@ -194,7 +194,8 @@ $(function () {
             }
 
             $("body").bind("queryReady", function () {
-                var hits = lunrIndex.search(query);
+                var wildcardQuery = query + "*";
+                var hits = lunrIndex.search(wildcardQuery);
                 var results = [];
                 hits.forEach(function (hit) {
                     var item = searchData[hit.ref];
@@ -214,6 +215,7 @@ $(function () {
                         indexReady.resolve();
                         break;
                     case 'query-ready':
+                        console.log(oEvent);
                         var hits = oEvent.data.d;
                         handleSearchResults(hits);
                         break;
@@ -222,9 +224,10 @@ $(function () {
 
             indexReady.promise().done(function () {
                 $("body").bind("queryReady", function () {
-                    worker.postMessage({ q: query });
+                    var wildcardQuery = query + "*";
+                    worker.postMessage({ q: wildcardQuery });
                 });
-                if (query && (query.length >= 3)) {
+                if (query && (query.length >= 3)) {                    
                     worker.postMessage({ q: query });
                 }
             });
