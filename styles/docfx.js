@@ -172,7 +172,7 @@ $(function () {
                 this.field('title', { boost: 80 });
                 this.field('keywords', { boost: 20 });
             });
-            lunr.tokenizer.seperator = /[\s\-\.]+/;
+            lunr.tokenizer.seperator = /[\s\-\.\(\)]+/;
             var searchData = {};
             var searchDataRequest = new XMLHttpRequest();
 
@@ -194,8 +194,7 @@ $(function () {
             }
 
             $("body").bind("queryReady", function () {
-                var wildcardQuery = query + "*";
-                var hits = lunrIndex.search(wildcardQuery);
+                var hits = lunrIndex.search(query);
                 var results = [];
                 hits.forEach(function (hit) {
                     var item = searchData[hit.ref];
@@ -215,7 +214,6 @@ $(function () {
                         indexReady.resolve();
                         break;
                     case 'query-ready':
-                        console.log(oEvent);
                         var hits = oEvent.data.d;
                         handleSearchResults(hits);
                         break;
@@ -224,10 +222,9 @@ $(function () {
 
             indexReady.promise().done(function () {
                 $("body").bind("queryReady", function () {
-                    var wildcardQuery = query + "*";
-                    worker.postMessage({ q: wildcardQuery });
+                    worker.postMessage({ q: query });
                 });
-                if (query && (query.length >= 3)) {                    
+                if (query && (query.length >= 3)) {                  
                     worker.postMessage({ q: query });
                 }
             });
