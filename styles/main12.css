@@ -308,12 +308,12 @@ nav.navbar {
     color: #fff
 }
 
-.page-header--homepage .inner-container {
+/* .page-header--homepage .inner-container {
     background-image: url("../images/ouro-full.svg");
     background-position: right 3rem bottom;
     background-repeat: no-repeat;
     background-size: contain
-}
+} */
 
 .page-header--homepage h1 {
     width: auto;
@@ -683,34 +683,6 @@ nav.navbar {
     color: #fff
 }
 
-.users {
-    padding: 1.5rem 1.5rem 3rem;
-    border-top: 1px solid #D3DBE3;
-    border-bottom: 1px solid #D3DBE3
-}
-
-.users p {
-    color: #898a99;
-    font-weight: 500;
-    text-align: center
-}
-
-.users-image {
-    width: 100%;
-    height: 9rem;
-    background-size: contain;
-    background-image: url("../images/users-small.png");
-    background-repeat: no-repeat;
-    background-position: center center
-}
-
-@media (min-width: 800px) {
-    .users-image {
-        height: 3rem;
-        background-image: url("../images/users.png")
-    }
-}
-
 .lead {
     font-size: 1.25rem;
     line-height: 1.5rem
@@ -775,52 +747,33 @@ nav.navbar {
 
 .media p, .media--left p, .media--right p, .media h2, .media--left h2, .media--right h2 {
     width: 26rem;
-    margin: 0
+    margin: 0;
 }
 
 .media p, .media--left p, .media--right p {
-    margin: 1.5rem 0 0
+    margin: 1.5rem 0 0;
 }
 
 .media--left img {
-    float: left
+    float: left;
 }
 
 .media--left p, .media--left h2 {
-    float: right
+    float: right;
 }
 
 .media--right img {
-    float: right
+    float: right;
 }
 
 .media--right p, .media--right h2 {
-    float: left
+    float: left;
 }
 
 .sidebar-list {
     margin: 1.5em 0;
     padding: 0;
     list-style: none
-}
-
-.checkmark-list {
-    padding: 0;
-    list-style: none
-}
-
-.checkmark-list li {
-    padding: 0.75rem 0 0.75rem 3rem;
-    background-image: url("../images/checkmark.svg"), linear-gradient(0deg, #D3DBE3 0%, #D3DBE3 50%, transparent 50%, transparent 100%);
-    background-position: 0.75rem center, left bottom;
-    background-repeat: no-repeat, repeat-x;
-    background-size: 1.5rem 1.5rem, 2px 2px
-}
-
-@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-    .checkmark-list li {
-        background-size: 1.5rem 1.5rem, 1px 1px
-    }
 }
 
 .site-banner {
@@ -1343,25 +1296,6 @@ nav.navbar {
     background-image: none
 }
 
-@media (min-width: 800px) {
-    .page-section--oem {
-        background-image: url("../images/oem-robot.svg"), linear-gradient(0deg, #D3DBE3 0%, #D3DBE3 50%, transparent 50%, transparent 100%);
-        background-position: right bottom, left bottom;
-        background-repeat: no-repeat, repeat-x;
-        background-size: contain, 2px 2px
-    }
-}
-
-@media (min-width: 800px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 800px) and (min-resolution: 192dpi) {
-    .page-section--oem {
-        background-size: contain, 1px 1px
-    }
-}
-
-.page-section--oem .call-to-action {
-    margin: 1.5rem 0
-}
-
 .page-section--appliances p.left {
     text-align: left
 }
@@ -1410,78 +1344,6 @@ nav.navbar {
     .page-section__major {
         width: 62.5%
     }
-}
-
-.community-intro-placeholder {
-    display: none;
-    width: 100%;
-    min-height: 12rem;
-    background-image: url("../images/community-ouros.svg");
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: contain
-}
-
-@media (min-width: 720px) {
-    .community-intro-placeholder {
-        display: block
-    }
-}
-
-.support-intro-placeholder {
-    display: none;
-    width: 100%;
-    min-height: 12rem;
-    background-image: url("../images/servers.svg");
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: contain
-}
-
-@media (min-width: 720px) {
-    .support-intro-placeholder {
-        display: block
-    }
-}
-
-.community-feature {
-    float: right;
-    background: #D3DBE3;
-    border-radius: 0.25rem;
-    margin: 0;
-    padding: 1.5rem 3rem 1.5rem 1.5rem;
-    transition: all 0.05s linear
-}
-
-.community-feature:after {
-    content: " ";
-    display: table;
-    clear: both
-}
-
-@media (min-width: 720px) {
-    .community-feature {
-        margin: 1.5rem 0 0 3rem
-    }
-}
-
-.community-feature:focus, .community-feature:hover {
-    background: #e3e8ed
-}
-
-.community-feature__image {
-    float: left;
-    height: 6rem;
-    width: 6rem;
-    border-radius: 50%
-}
-
-.community-feature__description {
-    float: left;
-    width: calc(100% - 7.5rem);
-    margin: 0.75rem 0 0.75rem 1.5rem;
-    font-size: 1.25rem;
-    line-height: 1.5rem
 }
 
 .c2a-buttons {
@@ -1629,85 +1491,6 @@ nav.navbar {
 .event-info {
     margin: 0;
     font-size: 0.75rem
-}
-
-.discussion-icons {
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    list-style: none
-}
-
-.discussion-icons__item, .discussion-icons__item--github, .discussion-icons__item--google-group, .discussion-icons__item--twitter {
-    display: block;
-    float: left;
-    width: 100%
-}
-
-.discussion-icons__item a, .discussion-icons__item--github a, .discussion-icons__item--google-group a, .discussion-icons__item--twitter a {
-    display: block;
-    margin: 0 0 1px;
-    padding: 0.75rem 1.5rem;
-    text-align: left;
-    color: #fff;
-    font-weight: 500
-}
-
-.discussion-icons__item a:focus, .discussion-icons__item--github a:focus, .discussion-icons__item--google-group a:focus, .discussion-icons__item--twitter a:focus, .discussion-icons__item a:hover, .discussion-icons__item--github a:hover, .discussion-icons__item--google-group a:hover, .discussion-icons__item--twitter a:hover {
-    opacity: 0.8
-}
-
-@media (min-width: 720px) {
-    .discussion-icons__item, .discussion-icons__item--github, .discussion-icons__item--google-group, .discussion-icons__item--twitter {
-        width: calc(33.333% - 1.5rem);
-        margin: 0 1.5rem 0 0
-    }
-    .discussion-icons__item a, .discussion-icons__item--github a, .discussion-icons__item--google-group a, .discussion-icons__item--twitter a {
-        margin: 0;
-        padding: 7.5rem 0 1.5rem;
-        border-radius: 0.25rem;
-        text-align: center;
-        transition: all 0.05s linear
-    }
-}
-
-.discussion-icons__item--github a {
-    background: #4183c4
-}
-
-@media (min-width: 720px) {
-    .discussion-icons__item--github a {
-        background-image: url("../images/github.svg");
-        background-position: center 2.25rem;
-        background-repeat: no-repeat;
-        background-size: 6rem
-    }
-}
-
-.discussion-icons__item--google-group a {
-    background: #4285F4
-}
-
-@media (min-width: 720px) {
-    .discussion-icons__item--google-group a {
-        background-image: url("../images/google-new.svg");
-        background-position: center 2.25rem;
-        background-repeat: no-repeat;
-        background-size: 4rem
-    }
-}
-
-.discussion-icons__item--twitter a {
-    background: #55ACEE
-}
-
-@media (min-width: 720px) {
-    .discussion-icons__item--twitter a {
-        background-image: url("../images/twitter.svg");
-        background-position: center 2.25rem;
-        background-repeat: no-repeat;
-        background-size: 6rem
-    }
 }
 
 .resource-section {
