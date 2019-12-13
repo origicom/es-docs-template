@@ -7,6 +7,7 @@
   <link rel="preconnect" href="//fonts.googleapis.com">
   <link rel="preconnect" href="//code.jquery.com">
   <link rel="preconnect" href="//www.googletagmanager.com">
+  <link rel="canonical" href="https://eventstore.com/docs/{{_path}}" />
   <title>{{#title}}{{title}}{{/title}}{{^title}}{{>partials/title}}{{/title}} {{#_appTitle}}| {{_appTitle}} {{/_appTitle}}</title>
   <meta name="viewport" content="width=device-width">
   <meta name="title" content="{{#title}}{{title}}{{/title}}{{^title}}{{>partials/title}}{{/title}} {{#_appTitle}}| {{_appTitle}} {{/_appTitle}}">
