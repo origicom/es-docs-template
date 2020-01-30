@@ -1,3 +1,9 @@
+html, body {
+    font-size: 100%;
+}
+.sideaffix, .toc .level2 {
+    font-size: 0.9rem;
+}
 .NEXT {
     border-color: #0070aa;
 }
@@ -78,7 +84,7 @@ body {
     margin: 0;
     background: #fff;
     color: #435261;
-    font-family: Roboto, sans-serif;
+    font-family: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif, sans-serif;
     font-weight: 400;
     line-height: 1.5rem;
 }
@@ -99,7 +105,8 @@ p a {
 }
 
 a:focus, a:hover {
-    color: #4CAF50
+    color: #4CAF50;
+    text-decoration: underline;
 }
 
 blockquote {
@@ -116,7 +123,7 @@ p, h1, h2, h3 {
 }
 
 h1, h2, h3 {
-    font-family: Roboto, sans-serif;
+    font-family: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif, sans-serif;
     font-weight: 500
 }
 
@@ -160,7 +167,7 @@ iframe {
 }
 
 pre, code {
-    font-family: "Source Code Pro", monospace;
+    font-family: "IBM Plex Mono", monospace;
     font-size: 1rem;
     line-height: 1.125rem;
     letter-spacing: -0.05rem;
@@ -228,11 +235,11 @@ nav.navbar {
 }
 
 .article {
-    margin-top: 30px;
+    margin-top: 42px;
 }
 
 .sidefilter {
-    top: 65px;
+    top: 82px;
 }
 
 .sinceversion b {
@@ -242,7 +249,7 @@ nav.navbar {
 }
 
 .sidetoc {
-    top: 130px;
+    top: 148px;
 }
 
 .page-header {
@@ -778,14 +785,17 @@ nav.navbar {
 
 .site-banner {
     margin: 0 0 1.5rem;
-    font-family: Roboto;
+    font-family: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     line-height: 1.5rem;
     -webkit-font-variant-ligatures: common-ligatures;
     font-variant-ligatures: common-ligatures;
-    background-color: #37474F;
+    background-color: #fff;
 }
 
 @media (min-width: 720px) {
+    .site-banner {
+        border-bottom: 2px solid #e7e7e7;
+    }
     .site-banner .inner-container {
         display: flex;
         flex-direction: row;
@@ -822,11 +832,13 @@ nav.navbar {
     top: 0;
     right: 0;
     padding: 1rem 1.5rem;
-    color: #fff
+    color: #212121;
+    font-weight: bold;
 }
 
 .site-navigation-toggle:focus, .site-navigation-toggle:hover {
-    color: #5AB552
+    color: #212121;
+    text-decoration: underline;
 }
 
 @media (min-width: 720px) {
@@ -839,7 +851,7 @@ nav.navbar {
     display: none;
     margin: 0;
     padding: 0;
-    background: #4CAF50
+    background: #fff;
 }
 
 @media (min-width: 720px) {
@@ -860,10 +872,7 @@ nav.navbar {
     display: block;
     font-size: 16px;
     padding: 0;
-    background-image: linear-gradient(0deg, transparent 0%, transparent 50%, #5AB552 50%, #5AB552 100%);
-    background-repeat: repeat-x;
-    background-position: top;
-    background-size: 2px 2px
+    background: white;
 }
 
 .site-navigation__item:after {
@@ -881,11 +890,12 @@ nav.navbar {
 .site-navigation__item a {
     display: block;
     padding: 0.75rem;
-    color: #fff
+    color: #212121;
+    font-weight: 600;
 }
 
 .site-navigation__item a:focus, .site-navigation__item a:hover {
-    color: #D3DBE3
+    text-decoration: underline;
 }
 
 @media (min-width: 720px) {
@@ -904,7 +914,8 @@ nav.navbar {
     margin: 1.5rem 0 0;
     padding: 0 0 1.5rem;
     color: #636472;
-    text-align: center
+    text-align: center;
+    padding-top: 21px;
 }
 
 .site-footer:after {
@@ -918,7 +929,7 @@ nav.navbar {
 }
 
 .site-footer a:focus, .site-footer a:hover {
-    color: #435261
+    text-decoration: underline;
 }
 
 .footer__copyright {
@@ -1066,7 +1077,7 @@ nav.navbar {
 }
 
 .docs-sidebar__list a:hover, .docs-sidebar__list a:focus {
-    color: #4CAF50
+    text-decoration: underline;
 }
 
 .docs-sidebar__list li li {
@@ -1982,3 +1993,12 @@ nav.navbar {
     background-position: 50%;
     background-repeat: no-repeat
 }
+
+.sideaffix > div.contribution > ul > li > a.contribution-link {
+    font-size: 1rem;
+}
+
+.affix h5 {
+    font-size: 1rem;
+}
+
