@@ -244,7 +244,7 @@ nav.navbar {
 
 .sinceversion b {
     padding: 6px 10px;
-    font-weight: bold;
+    font-weight: 600;
     font-size: 14px;
 }
 
@@ -451,7 +451,7 @@ nav.navbar {
     max-width: 36rem !important;
     margin: 0 auto;
     text-align: center;
-    font-weight: 700
+    font-weight: 600
 }
 
 .blog-post figure {
@@ -833,7 +833,7 @@ nav.navbar {
     right: 0;
     padding: 1rem 1.5rem;
     color: #212121;
-    font-weight: bold;
+    font-weight: 600;
 }
 
 .site-navigation-toggle:focus, .site-navigation-toggle:hover {
@@ -1007,9 +1007,9 @@ nav.navbar {
     border-radius: 0.25rem;
     background: #4CAF50;
     color: #fff;
-    font-weight: 700;
+    font-weight: 600;
     text-align: center;
-    font-size: 12px;
+    font-size: 1rem;
 }
 
 @media only screen and (max-width: 768px) {
@@ -1066,7 +1066,7 @@ nav.navbar {
 
 .docs-sidebar__list li {
     display: block;
-    font-weight: 700
+    font-weight: 600
 }
 
 .docs-sidebar__list a {
@@ -1779,7 +1779,7 @@ nav.navbar {
 
 .highlight .gs {
     color: #586e75;
-    font-weight: bold
+    font-weight: 600
 }
 
 .highlight .gu {
