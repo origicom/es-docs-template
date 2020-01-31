@@ -4,11 +4,54 @@
 <script type="text/javascript" src="{{_rel}}styles/docfx.js"></script>
 <script type="text/javascript" src="{{_rel}}styles/main.js"></script>
 
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-46209892-15"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'UA-46209892-15');
-    </script>
+<script>
+    function showCookieNotice() {
+        var cookieWarning = document.getElementById("cookies");
+        cookieWarning.classList.add("is-open");
+    }
+
+    function enableAnalytics() {
+        // Google Tag Manager
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-NQ6B32R');
+        // End Google Tag Manager
+    }
+
+    function checkCookies() {
+        if (document.cookie.indexOf("allowCookies=true") >= 0) {
+            allowCookies();
+        } else if (document.cookie.indexOf("allowCookies=false") >= 0) {
+            revokeCookieConsent();
+        } else {
+            showCookieNotice();
+        }
+    }
+
+    function allowCookies() {
+        var d = new Date();
+        d.setTime(d.getTime() + (365*24*60*60*1000));
+        var expires = "expires="+d.toUTCString();
+        document.cookie = "allowCookies=true; " + expires + "; path=/";
+        enableAnalytics();
+        var cookieWarning = document.getElementById("cookies");
+        cookieWarning.classList.remove("is-open");
+    }
+
+    function revokeCookieConsent() {
+        var res = document.cookie;
+        var multiple = res.split(";");
+        for(var i = 0; i < multiple.length; i++) {
+            var key = multiple[i].split("=");
+            document.cookie = key[0]+" =; expires = Thu, 01 Jan 1970 00:00:00 UTC; path=/";
+        }
+        var d = new Date();
+        d.setTime(d.getTime() + (365*24*60*60*1000));
+        var expires = "expires="+d.toUTCString();
+        document.cookie = "allowCookies=false; " + expires + "; path=/";
+        var cookieWarning = document.getElementById("cookies");
+        cookieWarning.classList.remove("is-open");
+    }
+</script>

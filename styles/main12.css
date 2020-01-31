@@ -2002,3 +2002,31 @@ nav.navbar {
     font-size: 1rem;
 }
 
+.cookie-notice {
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: flex-end;
+  position: fixed;
+  width: 100vw;
+  z-index: 9999;
+}
+.cookie-notice.is-open {
+  display: flex;
+}
+
+.cookie-notice__banner {
+  background-color: #FFFFFF;
+  padding: 6rem 0 7.5rem;
+}
+.cookie-notice__banner p {
+  margin: 1.5rem 0;
+  max-width: 46.5rem;
+}
+@media (max-width: 67.5rem) {
+  .cookie-notice__banner .btn {
+    margin-bottom: 0.75rem;
+    width: 100%;
+  }
+}
