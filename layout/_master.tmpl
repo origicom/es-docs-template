@@ -2,15 +2,24 @@
 {{!include(/^styles/.*/)}}
 {{!include(/^fonts/.*/)}}
 {{!include(favicon.ico)}}
+{{!include(favicon.png)}}
 {{!include(logo.svg)}}
 {{!include(search-stopwords.json)}}
 <!DOCTYPE html>
 <!--[if IE]><![endif]-->
 <html>
   {{>partials/head}}
-  <body data-spy="scroll" data-target="#affix">
-    <script src="https://secure.perk0mean.com/js/168910.js"></script>
-    <noscript><img alt="" src="https://secure.perk0mean.com/168910.png" style="display:none;"></noscript>
+  <body data-spy="scroll" data-target="#affix" onload="checkCookies()">
+    <div class="cookie-notice" id="cookies">
+        <div class="cookie-notice__banner">
+            <div class="container">
+                <h2>Cookies preferences</h2>
+                <p>We’d like to use analytics cookies. These send information about how our site is used to services called Google Analytics and LinkedIn. We’ll use this information to improve our site. Let us know if this is okay. We’ll use a cookie to save your choice. You can <a href="/privacy/#tracking">read more about our cookies</a> before you choose.</p>
+                <button class="btn btn--primary" onclick="allowCookies()">I’m okay with analytics cookies</button>
+                <button class="btn btn--primary" onclick="revokeCookieConsent()">Do not use analytics cookies</button>
+            </div>
+        </div>
+    </div>
     <div id="wrapper">
       <header class="site-banner" role="banner">
         {{^_disableNavbar}}
