@@ -21,14 +21,16 @@
     }
 
     function checkCookies() {
-        if (document.cookie.indexOf("allowCookies=true") >= 0) {
-            allowCookies();
-        } else if (document.cookie.indexOf("allowCookies=false") >= 0) {
-            revokeCookieConsent();
-        } else {
-            showCookieNotice();
+            if (document.cookie.indexOf("allowCookies=true") >= 0) {
+                allowCookies();
+            } else if (document.cookie.indexOf("allowCookies=false") >= 0) {
+                revokeCookieConsent();
+            } else {
+                if (window.location.pathname != "/cookie-preferences/") {
+                    showCookieNotice();
+                }
+            }
         }
-    }
 
     function allowCookies() {
         var d = new Date();
